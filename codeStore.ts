@@ -79,3 +79,37 @@ const user5: IUserType = {
   name: 'Mahadi',
   age: 30,
 };
+
+// nicher ta evabe naa likhe type use kora valo
+
+const food: {
+  name: string;
+  price: number;
+} = {
+  name: 'burger',
+  price: 50,
+};
+
+const getFoodPrice = (food: { name: string; price: number }) => {
+  return food.price;
+};
+
+console.log(getFoodPrice(food));
+
+// evabe
+
+type Foods = {
+  name: string;
+  price: number;
+};
+
+const foods: Foods = {
+  name: 'burger',
+  price: 50,
+};
+
+const getFoodsPrice = (food: Foods) => {
+  return food.price;
+};
+
+console.log(getFoodsPrice(foods));
