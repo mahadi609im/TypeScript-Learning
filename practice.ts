@@ -1,17 +1,57 @@
-// rest vs spread
+// union types vs intersection types
 
-const arr1: number[] = [2, 4, 6, 8, 10];
+/*
+// union types
 
-const arr2: number[] = [...arr1, 1, 3, 5, 7, 9];
-// const arr3: string[] = [...arr1, 1, 3, 5, 7, 9]; //Error
+ mane string oo hote pare data abar number oo hote pare
+ */
+const unionData: string | number = 23;
 
-console.log(arr2);
+// example
+type PaymentMethodType = 'Bkash' | 'Nagad' | 'Bank';
 
-const nums: number[] = [2, 4, 6, 8, 10];
-
-const restFunc = (...numRest: number[]) => {
-  const result = numRest.reduce((a, b) => a + b);
-  return result;
+const payment = (paymentGetway: PaymentMethodType) => {
+  console.log('Paying using', paymentGetway);
 };
 
-console.log(restFunc(...nums));
+payment('Bkash');
+// payment('Upay'); //uporer 3 tar theke ekta houar uchit
+
+/*
+// intersection types
+
+ mane string oo hote pare data abar number oo hote pare
+ */
+
+type UserType = {
+  userId: number;
+  name: string;
+  email: string;
+  profilePic?: null;
+};
+
+type EmployeeType = {
+  EmpId: number;
+  role: 'User' | 'admin';
+  nationalId: number;
+};
+
+const user7: UserType & EmployeeType = {
+  userId: 3403,
+  name: 'Mahadi',
+  email: 'maha609im@gmail.com',
+  EmpId: 34,
+  role: 'User',
+  nationalId: 34334334343,
+};
+
+type UserProfileType = UserType & EmployeeType;
+
+const user8: UserProfileType = {
+  userId: 3403,
+  name: 'Mahadi',
+  email: 'maha609im@gmail.com',
+  EmpId: 34,
+  role: 'User',
+  nationalId: 34334334343,
+};
