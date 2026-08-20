@@ -1,57 +1,13 @@
-// union types vs intersection types
+// same same but different => ? / ??
 
-/*
-// union types
+const yourAge = 20;
 
- mane string oo hote pare data abar number oo hote pare
- */
-const unionData: string | number = 23;
+const result = yourAge >= 21 ? 'biye' : 'shishu';
 
-// example
-type PaymentMethodType = 'Bkash' | 'Nagad' | 'Bank';
+console.log(result);
 
-const payment = (paymentGetway: PaymentMethodType) => {
-  console.log('Paying using', paymentGetway);
-};
+const userProfile: string | null = 'Mahadi';
 
-payment('Bkash');
-// payment('Upay'); //uporer 3 tar theke ekta houar uchit
+const result2 = userProfile ?? 'Guest';
 
-/*
-// intersection types
-
- mane string oo hote pare data abar number oo hote pare
- */
-
-type UserType = {
-  userId: number;
-  name: string;
-  email: string;
-  profilePic?: null;
-};
-
-type EmployeeType = {
-  EmpId: number;
-  role: 'User' | 'admin';
-  nationalId: number;
-};
-
-const user7: UserType & EmployeeType = {
-  userId: 3403,
-  name: 'Mahadi',
-  email: 'maha609im@gmail.com',
-  EmpId: 34,
-  role: 'User',
-  nationalId: 34334334343,
-};
-
-type UserProfileType = UserType & EmployeeType;
-
-const user8: UserProfileType = {
-  userId: 3403,
-  name: 'Mahadi',
-  email: 'maha609im@gmail.com',
-  EmpId: 34,
-  role: 'User',
-  nationalId: 34334334343,
-};
+console.log(result2);
