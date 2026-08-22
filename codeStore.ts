@@ -256,3 +256,12 @@ const isUser: IsBoolean = false;
  * তাই boolean, string, number-এর মতো primitive type-এর জন্য
  * interface নয়, type alias ব্যবহার করতে হয়।
  */
+
+type ArrayType = number[];
+
+interface IArrayType {
+  [index: number]: string;
+}
+
+const alphabets: IArrayType = ['G', 'A', 'D'];
+const numbers: ArrayType = [1, 5, 6];
