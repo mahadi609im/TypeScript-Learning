@@ -232,3 +232,27 @@ const student1: IStudentFullData = {
   passYear: 2028,
   subject: ['Math', 'Higher Math'],
 };
+
+type IsBoolean = boolean;
+
+const isAdmin: IsBoolean = true;
+const isUser: IsBoolean = false;
+
+/**
+ * Interface দিয়ে এভাবে primitive type alias করা যায় না।
+ *
+ * কারণ interface মূলত object-এর structure/shape define করার জন্য ব্যবহার করা হয়।
+ *
+ * Example:
+ *
+ * interface IStudent {
+ *   name: string;
+ *   roll: number;
+ *   classYear: string;
+ * }
+ *
+ * এখানে IStudent একটি object-এর structure define করছে।
+ *
+ * তাই boolean, string, number-এর মতো primitive type-এর জন্য
+ * interface নয়, type alias ব্যবহার করতে হয়।
+ */
