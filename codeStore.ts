@@ -23,14 +23,6 @@ age = 34;
 
 console.log(age);
 
-const user3: { id: number; name: string; age: number; organization: string } = {
-  id: 1,
-  name: 'Mahadi',
-  age: 30,
-};
-
-console.log(user3);
-
 const user1: { id: number; name: string; age: number; organization?: string } =
   {
     id: 1,
@@ -219,3 +211,24 @@ const userProfile: string | null = 'Mahadi';
 const result2 = userProfile ?? 'Guest';
 
 console.log(result2);
+
+//interface extends
+
+interface IStudent {
+  name: string;
+  roll: number;
+  classYear: string;
+}
+
+interface IStudentFullData extends IStudent {
+  passYear: number;
+  subject: string[];
+}
+
+const student1: IStudentFullData = {
+  name: 'Mahadi',
+  roll: 34,
+  classYear: 'Inter first',
+  passYear: 2028,
+  subject: ['Math', 'Higher Math'],
+};
