@@ -304,8 +304,21 @@ const roll02: Array<number> = [1, 2, 3];
 const isActive02: Array<boolean> = [true, false, true];
 
 // Generic type
+/**
+ *  TypeScript-এর Array generic শুধু একটি type parameter নেয়: Array<T>
+ */
 type TypeOfFriend<T> = Array<T>;
 
 const user03: TypeOfFriend<string> = ['Mahadi', 'Hasan', 'Milon'];
 const roll03: TypeOfFriend<number> = [1, 2, 3];
 const isActive03: TypeOfFriend<boolean> = [true, false, true];
+
+/**
+ * [X, Y] হলো Tuple। Array Naa
+ */
+
+type DynamicTypes<X, Y> = [X, Y];
+
+const data1: DynamicTypes<string, number> = ['Mahadi', 20];
+const data2: DynamicTypes<string, boolean> = ['Maha', true];
+const data3: DynamicTypes<number, boolean> = [3, true];
