@@ -1,15 +1,13 @@
-const add = (num1: number, num2: number): number => {
-  return num1 + num2;
-};
+const user: string[] = ['Mahadi', 'Hasan', 'Milon'];
+const Roll: number[] = [1, 2, 3];
+const isActive: boolean[] = [true, false, true];
 
-const addNum = add(2, 4);
-console.log(addNum);
+const user1: Array<string> = ['Mahadi', 'Hasan', 'Milon'];
+const Roll1: Array<number> = [1, 2, 3];
+const isActive1: Array<boolean> = [true, false, true];
 
-type SubtractType = (num1: number, num2: number) => number;
-
-const subtract: SubtractType = (num1, num2) => {
-  return num1 - num2;
-};
-
-const subNum = subtract(5, 4);
-console.log(subNum);
+// Generic
+type TypeOfFriend<T> = Array<T>;
+const user2: TypeOfFriend<string> = ['Mahadi', 'Hasan', 'Milon'];
+const Roll2: TypeOfFriend<number> = [1, 2, 3];
+const isActive2: TypeOfFriend<boolean> = [true, false, true];

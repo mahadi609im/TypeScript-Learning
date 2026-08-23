@@ -281,3 +281,31 @@ const subtract: SubtractType = (num1, num2) => {
 
 const subNum = subtract(5, 4);
 console.log(subNum);
+
+// Type Assertion
+
+let anything: any;
+
+anything = true;
+anything = 'Hello';
+anything = 30;
+
+const assertion = anything as number;
+console.log(assertion.toFixed(3));
+
+// Array type using shorthand syntax
+const user01: string[] = ['Mahadi', 'Hasan', 'Milon'];
+const roll01: number[] = [1, 2, 3];
+const isActive01: boolean[] = [true, false, true];
+
+// Array type using generic syntax
+const user02: Array<string> = ['Mahadi', 'Hasan', 'Milon'];
+const roll02: Array<number> = [1, 2, 3];
+const isActive02: Array<boolean> = [true, false, true];
+
+// Generic type
+type TypeOfFriend<T> = Array<T>;
+
+const user03: TypeOfFriend<string> = ['Mahadi', 'Hasan', 'Milon'];
+const roll03: TypeOfFriend<number> = [1, 2, 3];
+const isActive03: TypeOfFriend<boolean> = [true, false, true];
