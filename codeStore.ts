@@ -322,3 +322,38 @@ type DynamicTypes<X, Y> = [X, Y];
 const data1: DynamicTypes<string, number> = ['Mahadi', 20];
 const data2: DynamicTypes<string, boolean> = ['Maha', true];
 const data3: DynamicTypes<number, boolean> = [3, true];
+
+// ------------------------------------
+const addCustomerOrder = <T>(customerInfo: T) => {
+  return {
+    orderStatus: 'pending',
+    ...customerInfo,
+  };
+};
+
+// Customer with basic information
+const result01 = addCustomerOrder<{
+  id: number;
+  name: string;
+  hasCoupon: boolean;
+}>({
+  id: 202,
+  name: 'Mahadi',
+  hasCoupon: true,
+});
+
+// Customer with additional information
+const result02 = addCustomerOrder<{
+  id: number;
+  name: string;
+  hasCoupon: boolean;
+  money: number;
+}>({
+  id: 202,
+  name: 'Mahadi',
+  hasCoupon: true,
+  money: 20000,
+});
+
+console.log(result01);
+console.log(result02);
