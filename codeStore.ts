@@ -357,3 +357,37 @@ const result02 = addCustomerOrder<{
 
 console.log(result01);
 console.log(result02);
+
+const addCustomerOrderPlace = <T>(customerInfo: T) => {
+  return { ...customerInfo };
+};
+
+type CustomerInfoTypes = {
+  id: number;
+  name: string;
+  hasCoupon: boolean;
+};
+
+const result03 = addCustomerOrderPlace<CustomerInfoTypes>({
+  id: 30,
+  name: 'mahadi',
+  hasCoupon: true,
+});
+
+const result04 = addCustomerOrderPlace<CustomerInfoTypes & { bill: number }>({
+  id: 30,
+  name: 'mahadi',
+  hasCoupon: true,
+  bill: 303,
+});
+
+console.log(result03, result04);
+
+type FoodMenuType = {
+  burger: string; // key : value
+  pizza: string;
+  chicken: string;
+};
+
+const fevFood1: 'burger' | 'pizza' | 'chicken' = 'burger';
+const fevFood2: keyof FoodMenuType = 'pizza';
