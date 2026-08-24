@@ -416,3 +416,45 @@ const result05 = addCustomerInfo<InfoType>({
 
    অর্থাৎ T-এর জন্য একটা minimum requirement দিয়ে দিলে।
  */
+
+type StudentType = {
+  studentName: string;
+  studentAge: number;
+  studentEmail: string;
+};
+
+const student: StudentType = {
+  studentName: 'Mahadi',
+  studentAge: 25,
+  studentEmail: 'mahadi@example.com',
+};
+
+type LaptopType = {
+  modelName: string;
+  price: number;
+  manufacturer: string;
+};
+
+const laptop: LaptopType = {
+  modelName: 'Inspiron 15',
+  price: 75000,
+  manufacturer: 'Dell',
+};
+
+type MealType = {
+  mealName: string;
+  mealPrice: number;
+  isAvailable: boolean;
+};
+
+const meal: MealType = {
+  mealName: 'Chicken Burger',
+  mealPrice: 250,
+  isAvailable: true,
+};
+
+const getKeyOfObj = <X>(obj: X, key: keyof X) => {
+  return obj[key];
+};
+
+const result06 = getKeyOfObj(meal, 'mealPrice');
